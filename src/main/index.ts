@@ -1,0 +1,54 @@
+import { app, BrowserWindow } from "electron";
+import path from "path";
+
+let mainWindow: BrowserWindow | null;
+
+function createWindow() {
+  mainWindow = new BrowserWindow({
+    width: 1024,
+    height: 768,
+    webPreferences: {
+      nodeIntegration: true,
+    },
+  });
+
+  if (process.env.NODE_ENV !== "production") {
+    mainWindow.loadURL("http://localhost:8080");
+    const { client } = require("electron-connect");
+    const { default: installExtension, REACT_DEVELOPER_TOOLS } = require("electron-devtools-installer");
+    client.create(mainWindow);
+    installExtension(REACT_DEVELOPER_TOOLS);
+  } else {
+    mainWindow.loadURL(`file://${path.join(__dirname, "index.html")}`);
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    mainWindow.once("ready-to-show", () => {
+      mainWindow?.webContents.openDevTools();
+    });
+  }
+
+  if (process.env.NODE_ENV !== "production") {
+    mainWindow.on("close", () => {
+      mainWindow?.webContents.closeDevTools();
+    });
+  }
+
+  mainWindow.on("closed", function () {
+    mainWindow = null;
+  });
+}
+
+app.on("ready", createWindow);
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});
+
+app.on("activate", () => {
+  if (mainWindow === null) {
+    createWindow();
+  }
+});
