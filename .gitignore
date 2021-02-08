@@ -6,4 +6,6 @@
 !.yarn/versions
 node_modules
 dist
+releases
+coverage
 .DS_Store

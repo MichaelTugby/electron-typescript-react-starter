@@ -1,7 +1,7 @@
 import { promisify } from "util";
 import webpack from "webpack";
 import WebpackDevServer from "webpack-dev-server";
-import electron from "electron-connect";
+import electron, { ProcessManagerState } from "electron-connect";
 
 import mainConfig from "./webpack.main.config";
 import rendererConfig from "./webpack.renderer.config";
@@ -10,10 +10,9 @@ const mainBuild = webpack(mainConfig);
 const server = new WebpackDevServer(webpack(rendererConfig), {
   hot: true,
   publicPath: "/",
-  watchOptions: { ignored: /src\/main/ },
 });
 
-function cb(state: string) {
+function cb(state: ProcessManagerState) {
   if (state === "stopped") {
     process.exit();
   }
@@ -25,12 +24,11 @@ function cb(state: string) {
       8080,
       "localhost"
     );
-    const electronServer = new electron.server.create({ stopOnClose: true });
+    const electronServer = electron.server.create({ stopOnClose: true });
     mainBuild.watch(
       {
         aggregateTimeout: 300,
         poll: undefined,
-        ignored: /src\/renderer/,
       },
       (err, stats) => {
         if (err) {

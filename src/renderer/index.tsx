@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
 
-import Button from "~/components/Button";
+import App from "./App";
 
-render(<Button>Test</Button>, document.getElementById("root"));
+render(<App />, document.getElementById("root"));

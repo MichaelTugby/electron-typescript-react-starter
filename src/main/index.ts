@@ -8,14 +8,17 @@ function createWindow() {
     width: 1024,
     height: 768,
     webPreferences: {
-      nodeIntegration: true,
+      contextIsolation: true,
     },
   });
 
   if (process.env.NODE_ENV !== "production") {
     mainWindow.loadURL("http://localhost:8080");
     const { client } = require("electron-connect");
-    const { default: installExtension, REACT_DEVELOPER_TOOLS } = require("electron-devtools-installer");
+    const {
+      default: installExtension,
+      REACT_DEVELOPER_TOOLS,
+    } = require("electron-devtools-installer");
     client.create(mainWindow);
     installExtension(REACT_DEVELOPER_TOOLS);
   } else {
