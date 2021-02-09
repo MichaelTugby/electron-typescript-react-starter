@@ -1,6 +1,26 @@
 # Electron + Typescript + React Starter
 Since I wasn't particularly happy with existing workflows, I created my own to use for future projects using a custom webpack dev server.
 
+# Scripts
+
+```js
+// Run in dev mode
+yarn dev //or
+npm run dev
+
+// Run unit tests
+yarn test //or
+npm test
+
+// Run e2e tests
+yarn e2e //or
+npm run e2e
+
+// Build for prod
+yarn build //or
+npm run build
+```
+
 # Technologies
 
 ## Renderer Process
@@ -18,7 +38,7 @@ Since I wasn't particularly happy with existing workflows, I created my own to u
 [Spectron](https://www.npmjs.com/package/spectron): Used for end to end testing the react application in the electron wrapper.
 
 ## Webpack
-The dev server works by spawning a webpack dev server instance to watch the renderer process, and watches another webpack instance for the main process.
+The dev server works by spawning a webpack dev server instance to watch the renderer process, and spawns another webpack instance to watch the main process.
 
 The renderer process supports hot reloading, and the main process supports live reloading.
 

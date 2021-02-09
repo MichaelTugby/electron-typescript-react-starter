@@ -1,20 +1,18 @@
 /** @jsx jsx */
-import createCache from "@emotion/cache";
+import type { FunctionComponent } from "react";
+import { Provider } from "react-redux";
 import { CacheProvider, jsx } from "@emotion/react";
 
-import type { FunctionComponent } from "react";
-
+import cache from "~/cache";
+import store from "~/store";
 import Button from "~/components/Button";
 
-const cache = createCache({
-  key: "ite",
-  nonce: "id3",
-});
-
 const App: FunctionComponent = () => (
-  <CacheProvider value={cache}>
-    <Button>Test</Button>
-  </CacheProvider>
+  <Provider store={store}>
+    <CacheProvider value={cache}>
+      <Button>Test</Button>
+    </CacheProvider>
+  </Provider>
 );
 
 export default App;

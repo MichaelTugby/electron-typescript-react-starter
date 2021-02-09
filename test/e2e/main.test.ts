@@ -9,11 +9,7 @@ describe("Application Launch", () => {
       args: ["."],
       path: electronPath as any,
     });
-    try {
-      await app.start();
-    } catch (err) {
-      console.error(err);
-    }
+    await app.start();
   });
 
   afterEach(async () => {

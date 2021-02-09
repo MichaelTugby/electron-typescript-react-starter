@@ -14,7 +14,7 @@ export default merge(baseConfig, {
   module: {
     rules: [
       {
-        test: /\.tsx$/,
+        test: /\.tsx?$/,
         use: [
           {
             loader: require.resolve("babel-loader"),
