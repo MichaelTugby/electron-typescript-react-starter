@@ -27,6 +27,8 @@ npm run build
 
 [React](https://www.npmjs.com/package/react): Creates the website inside the renderer process.
 
+[Redux](https://www.npmjs.com/package/redux): Handles the state of the react app.
+
 [Emotion](https://www.npmjs.com/package/@emotion/react): Adds CSS in JS support for React.
 
 ## Testing
