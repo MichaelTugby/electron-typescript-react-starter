@@ -1,6 +1,7 @@
 /** @jsx jsx */
-import { CacheProvider, jsx } from "@emotion/react";
 import createCache from "@emotion/cache";
+import { CacheProvider, jsx } from "@emotion/react";
+
 import type { FunctionComponent } from "react";
 
 import Button from "~/components/Button";

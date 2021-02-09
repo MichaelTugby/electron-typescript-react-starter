@@ -60,6 +60,6 @@ export default merge(baseConfig, {
       ? [new HotModuleReplacementPlugin(), new ReactRefreshWebpackPlugin()]
       : []
   ),
-  target: "web",
+  target: isDevelopment ? "web" : "browserslist",
   node: false,
 });

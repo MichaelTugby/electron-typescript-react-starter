@@ -18,9 +18,19 @@ function createWindow() {
     const {
       default: installExtension,
       REACT_DEVELOPER_TOOLS,
+      REDUX_DEVTOOLS,
     } = require("electron-devtools-installer");
     client.create(mainWindow);
-    installExtension(REACT_DEVELOPER_TOOLS);
+    const date = new Date().toISOString();
+    installExtension([
+      REACT_DEVELOPER_TOOLS,
+      REDUX_DEVTOOLS,
+    ]).catch((err: Error) =>
+      console.error(
+        `[${date}] [electron-devtools-installer] An error occurred: `,
+        err
+      )
+    );
   } else {
     mainWindow.loadURL(`file://${path.join(__dirname, "index.html")}`);
   }

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, css } from "@emotion/react";
+import { css, jsx } from "@emotion/react";
 import PropTypes from "prop-types";
 
 import type { FunctionComponent } from "react";
@@ -8,16 +8,22 @@ interface ButtonTypes {
   children: string;
 }
 const Button: FunctionComponent<ButtonTypes> = ({ children }) => (
-  <button
+  <div
     css={css`
-      color: blue;
-      &:hover {
-        color: red;
-      }
+      display: flex;
     `}
   >
-    {children}
-  </button>
+    <button
+      css={css`
+        color: blue;
+        &:hover {
+          color: red;
+        }
+      `}
+    >
+      {children}
+    </button>
+  </div>
 );
 Button.propTypes = {
   children: PropTypes.string.isRequired,

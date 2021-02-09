@@ -11,6 +11,7 @@
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended"
   ],
+  "plugins": ["@emotion"],
   "settings": {
     "react": {
       "version": "detect"
@@ -18,6 +19,11 @@
   },
   "rules": {
     "@typescript-eslint/no-var-requires": 0,
-    "@typescript-eslint/no-explicit-any": 0
+    "@typescript-eslint/no-explicit-any": 0,
+    "@emotion/jsx-import": "error",
+    "@emotion/no-vanilla": "error",
+    "@emotion/import-from-emotion": "error",
+    "@emotion/styled-import": "error",
+    "@emotion/pkg-renaming": "error"
   }
 }
