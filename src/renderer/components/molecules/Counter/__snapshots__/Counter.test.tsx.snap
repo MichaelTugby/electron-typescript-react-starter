@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter snapshot has not changed 1`] = `
+<div>
+  <div
+    class="counter"
+  >
+    <button
+      class="counter__decrease-btn css-1msykvu-Button"
+    >
+      -
+    </button>
+    <span
+      class="counter__text css-uwz46b-Counter"
+    >
+      1
+    </span>
+    <button
+      class="counter__increase-btn css-1msykvu-Button"
+    >
+      +
+    </button>
+  </div>
+</div>
+`;

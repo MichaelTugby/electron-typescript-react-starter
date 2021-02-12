@@ -1,8 +1,8 @@
 import React from "react";
 import { cleanup, render } from "@testing-library/react";
-import Button from "~/components/Button";
+import Button from "./Button";
 
-describe("Button Component", () => {
+describe("Button", () => {
   afterEach(cleanup);
 
   it("snapshot has not changed", () => {

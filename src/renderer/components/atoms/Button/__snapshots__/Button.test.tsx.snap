@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Component snapshot has not changed 1`] = `
+exports[`Button snapshot has not changed 1`] = `
 <div>
   <button
-    class="css-24dw16-Button"
+    class="button css-50ddk5-Button"
   >
     Test
   </button>

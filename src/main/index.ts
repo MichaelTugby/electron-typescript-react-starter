@@ -14,12 +14,12 @@ function createWindow() {
 
   if (process.env.NODE_ENV !== "production") {
     mainWindow.loadURL("http://localhost:8080");
-    const { client } = require("electron-connect");
+    const { client } = require("electron-connect"); // eslint-disable-line @typescript-eslint/no-var-requires
     const {
       default: installExtension,
       REACT_DEVELOPER_TOOLS,
       REDUX_DEVTOOLS,
-    } = require("electron-devtools-installer");
+    } = require("electron-devtools-installer"); // eslint-disable-line @typescript-eslint/no-var-requires
     client.create(mainWindow);
     const date = new Date().toISOString();
     installExtension([

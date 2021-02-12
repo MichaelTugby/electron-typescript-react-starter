@@ -22,7 +22,7 @@ export default {
   },
   resolve: {
     extensions: [".js", ".ts", ".jsx", ".tsx"],
-    plugins: [new TsConfigPathsWebpackPlugin() as any], // Temporary until tsconfig paths types are fixed for webpack 5
+    plugins: [new TsConfigPathsWebpackPlugin() as any], // eslint-disable-line @typescript-eslint/no-explicit-any
   },
   plugins: [
     new DefinePlugin({
