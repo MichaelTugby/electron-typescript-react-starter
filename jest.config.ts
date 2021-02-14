@@ -5,4 +5,5 @@ export default {
   moduleNameMapper: {
     "~(.*)$": "<rootDir>/src/renderer/$1",
   },
+  testPathIgnorePatterns: ["/node_modules/", "/releases/"],
 } as Config.InitialOptions;

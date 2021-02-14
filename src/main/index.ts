@@ -32,6 +32,7 @@ function createWindow() {
       )
     );
   } else {
+    mainWindow.setMenuBarVisibility(false);
     mainWindow.loadURL(`file://${path.join(__dirname, "index.html")}`);
   }
 
