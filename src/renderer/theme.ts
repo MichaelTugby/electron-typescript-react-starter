@@ -1,5 +1,3 @@
-import "@emotion/react";
-
 const theme = {
   colors: {
     primary: "lightblue",
