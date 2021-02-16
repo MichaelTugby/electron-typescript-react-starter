@@ -21,6 +21,12 @@ const Counter: FunctionComponent<ICounterType> = ({
     <span
       css={css`
         padding: 0 5px;
+        @media (prefers-color-scheme: dark) {
+          color: white;
+        }
+        @media (prefers-color-scheme: light) {
+          color: black;
+        }
       `}
       className="counter__text"
     >

@@ -4,9 +4,10 @@ import WebpackDevServer from "webpack-dev-server";
 import electron, { ProcessManagerState } from "electron-connect";
 
 import mainConfig from "./webpack.main.config";
+import preloadConfig from "./webpack.preload.config";
 import rendererConfig from "./webpack.renderer.config";
 
-const mainBuild = webpack(mainConfig);
+const mainBuild = webpack([mainConfig, preloadConfig]);
 const server = new WebpackDevServer(webpack(rendererConfig), {
   hot: true,
   publicPath: "/",
@@ -36,7 +37,8 @@ function cb(state: ProcessManagerState) {
           process.exit();
         }
         if (stats) {
-          const bundle = `${stats.compilation.outputOptions.path}/${stats.compilation.outputOptions.filename}`;
+          const mainStats = stats.stats[0];
+          const bundle = `${mainStats.compilation.outputOptions.path}/${mainStats.compilation.outputOptions.filename}`;
           if (electronServer.electronState === "init") {
             electronServer.start(bundle, cb);
           } else {

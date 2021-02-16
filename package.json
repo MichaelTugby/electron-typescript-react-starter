@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "ts-node webpack.devServer.ts",
     "build": "run-s build:all && electron-packager ./ --out=releases --overwrite",
-    "build:all": "rm -rf ./dist && cross-env NODE_ENV=production run-p build:main build:renderer",
+    "build:all": "rm -rf ./dist && cross-env NODE_ENV=production run-p build:main build:preload build:renderer",
     "build:main": "webpack --config webpack.main.config.ts",
+    "build:preload": "webpack --config webpack.preload.config.ts",
     "build:renderer": "webpack --config webpack.renderer.config.ts",
     "test": "jest src/**/*.test.tsx --coverage",
     "e2e": "run-s build:all && jest test/*.test.ts"

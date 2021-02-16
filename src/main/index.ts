@@ -1,14 +1,13 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, ipcMain, nativeTheme } from "electron";
 import path from "path";
 
-let mainWindow: BrowserWindow | null;
-
-function createWindow() {
-  mainWindow = new BrowserWindow({
+async function createWindow() {
+  const mainWindow = new BrowserWindow({
     width: 1024,
     height: 768,
     webPreferences: {
       contextIsolation: true,
+      preload: path.join(__dirname, "preload.js"),
     },
   });
 
@@ -22,38 +21,46 @@ function createWindow() {
     } = require("electron-devtools-installer"); // eslint-disable-line @typescript-eslint/no-var-requires
     client.create(mainWindow);
     const date = new Date().toISOString();
-    installExtension([
-      REACT_DEVELOPER_TOOLS,
-      REDUX_DEVTOOLS,
-    ]).catch((err: Error) =>
-      console.error(
-        `[${date}] [electron-devtools-installer] An error occurred: `,
-        err
+
+    await installExtension([REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS])
+      .then((name: string) =>
+        console.log(
+          `[${date}] [electron-devtools-installer] Added extension: ${name}`
+        )
       )
-    );
+      .catch((err: Error) =>
+        console.error(
+          `[${date}] [electron-devtools-installer] An error occurred: `,
+          err
+        )
+      )
+      .finally(() => {
+        mainWindow.webContents.openDevTools();
+      });
+
+    mainWindow.on("close", () => {
+      mainWindow?.webContents.closeDevTools();
+    });
   } else {
     mainWindow.setMenuBarVisibility(false);
     mainWindow.loadURL(`file://${path.join(__dirname, "index.html")}`);
   }
 
-  if (process.env.NODE_ENV !== "production") {
-    mainWindow.once("ready-to-show", () => {
-      mainWindow?.webContents.openDevTools();
-    });
-  }
+  ipcMain.on("dark-mode:toggle", () => {
+    if (nativeTheme.shouldUseDarkColors) {
+      nativeTheme.themeSource = "light";
+    } else {
+      nativeTheme.themeSource = "dark";
+    }
+    return nativeTheme.shouldUseDarkColors;
+  });
 
-  if (process.env.NODE_ENV !== "production") {
-    mainWindow.on("close", () => {
-      mainWindow?.webContents.closeDevTools();
-    });
-  }
-
-  mainWindow.on("closed", function () {
-    mainWindow = null;
+  ipcMain.on("dark-mode:system", () => {
+    nativeTheme.themeSource = "system";
   });
 }
 
-app.on("ready", createWindow);
+app.whenReady().then(createWindow);
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
@@ -62,7 +69,7 @@ app.on("window-all-closed", () => {
 });
 
 app.on("activate", () => {
-  if (mainWindow === null) {
+  if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
   }
 });
