@@ -11,7 +11,7 @@
     "build:preload": "webpack --config webpack.preload.config.ts",
     "build:renderer": "webpack --config webpack.renderer.config.ts",
     "test": "jest src/**/*.test.{ts,tsx} --coverage",
-    "e2e": "jest src/**/*.e2e.{ts,tsx}"
+    "e2e": "run-s build:all && jest src/**/*.e2e.{ts,tsx}"
   },
   "dependencies": {
     "@emotion/cache": "^11.1.3",
@@ -31,6 +31,7 @@
     "@babel/preset-typescript": "^7.13.0",
     "@emotion/babel-plugin": "^11.2.0",
     "@emotion/eslint-plugin": "^11.2.0",
+    "@jest/types": "^26.6.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
@@ -47,6 +48,7 @@
     "babel-loader": "^8.2.2",
     "core-js": "^3.9.0",
     "cross-env": "^7.0.3",
+    "debug": "^4.3.1",
     "electron": "^11.3.0",
     "electron-connect": "^0.6.3",
     "electron-devtools-installer": "^3.1.1",
