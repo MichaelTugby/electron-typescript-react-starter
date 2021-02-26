@@ -1,9 +1,11 @@
 # Electron + Typescript + React Starter
+
 Since I wasn't particularly happy with existing workflows, I created my own to use for future projects using a custom webpack dev server.
 
-# Scripts
+## Scripts
 
 Using Yarn with VSCode or Vim is highly recommended as PnP has been setup for those environments.
+
 ```js
 npm install yarn -g //If not already installed
 yarn install
@@ -23,9 +25,9 @@ yarn e2e
 yarn build
 ```
 
-# Technologies
+## Technologies
 
-## Renderer Process
+### Renderer Process
 
 [React](https://www.npmjs.com/package/react): Creates the website inside the renderer process.
 
@@ -33,7 +35,7 @@ yarn build
 
 [Emotion](https://www.npmjs.com/package/@emotion/react): Adds CSS in JS support for React.
 
-## Testing
+### Testing
 
 [Jest](https://www.npmjs.com/package/jest): Used for unit and snapshot testing the react application.
 
@@ -41,7 +43,8 @@ yarn build
 
 [Spectron](https://www.npmjs.com/package/spectron): Used for end to end testing the react application in the electron wrapper.
 
-## Webpack
+### Webpack
+
 The dev server works by spawning a webpack dev server instance to watch the renderer process, and spawns another webpack instance to watch the main process.
 
 The renderer process supports hot reloading, and the main process supports live reloading.
