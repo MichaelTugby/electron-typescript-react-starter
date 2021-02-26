@@ -23,6 +23,12 @@ describe("Main", () => {
         jest.resetModules();
       });
 
+      it("should disable pnp mode", async () => {
+        await import("~/main");
+        await flushPromises();
+        expect(process.env.NODE_OPTIONS).toEqual("undefined");
+      });
+
       it("should load localhost url", async () => {
         await import("~/main");
         await flushPromises();

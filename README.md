@@ -18,9 +18,6 @@ yarn dev
 // Run unit tests
 yarn test
 
-// Run e2e tests
-yarn e2e
-
 // Build for prod
 yarn build
 ```

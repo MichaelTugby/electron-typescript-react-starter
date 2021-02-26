@@ -19,6 +19,12 @@ describe("Main", () => {
         jest.resetModules();
       });
 
+      it("should enable pnp mode", async () => {
+        await import("~/main");
+        await flushPromises();
+        expect(process.env.NODE_OPTIONS).not.toBeUndefined();
+      });
+
       it("should hide menu bar", async () => {
         expect(mainWindow.setMenuBarVisibility).toHaveBeenCalledWith(false);
       });
