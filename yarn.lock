@@ -4489,7 +4489,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:4, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.1":
+"debug@npm:4, debug@npm:^4.0.1, debug@npm:^4.1.0, debug@npm:^4.1.1, debug@npm:^4.3.2":
   version: 4.3.2
   resolution: "debug@npm:4.3.2"
   dependencies:
@@ -5037,7 +5037,7 @@ __metadata:
     babel-loader: ^8.2.2
     core-js: ^3.9.0
     cross-env: ^7.0.3
-    debug: ^4.3.1
+    debug: ^4.3.2
     electron: ^11.3.0
     electron-connect: ^0.6.3
     electron-devtools-installer: ^3.1.1

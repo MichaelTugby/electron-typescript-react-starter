@@ -1,6 +1,8 @@
 import { app, BrowserWindow, ipcMain, nativeTheme } from "electron";
 import path from "path";
 
+process.env.NODE_OPTIONS = undefined; // Disable PnP for main process
+
 async function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1024,
