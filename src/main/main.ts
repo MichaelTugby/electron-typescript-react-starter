@@ -1,8 +1,6 @@
 import { app, BrowserWindow, ipcMain, nativeTheme } from "electron";
 import path from "path";
 
-process.env.NODE_OPTIONS = undefined; // Disable PnP for main process
-
 async function createWindow() {
   const mainWindow = new BrowserWindow({
     width: 1024,
@@ -13,6 +11,7 @@ async function createWindow() {
     },
   });
   if (process.env.NODE_ENV !== "production") {
+    process.env.NODE_OPTIONS = undefined; // Disable PnP for main process
     mainWindow.loadURL("http://localhost:8080");
     const { client } = require("electron-connect"); // eslint-disable-line @typescript-eslint/no-var-requires
     const {
