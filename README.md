@@ -3,22 +3,24 @@ Since I wasn't particularly happy with existing workflows, I created my own to u
 
 # Scripts
 
+Using Yarn with VSCode or Vim is highly recommended as PnP has been setup for those environments.
+```js
+npm install yarn -g //If not already installed
+yarn install
+```
+
 ```js
 // Run in dev mode
-yarn dev //or
-npm run dev
+yarn dev
 
 // Run unit tests
-yarn test //or
-npm test
+yarn test
 
 // Run e2e tests
-yarn e2e //or
-npm run e2e
+yarn e2e
 
 // Build for prod
-yarn build //or
-npm run build
+yarn build
 ```
 
 # Technologies

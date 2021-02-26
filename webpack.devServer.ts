@@ -30,6 +30,7 @@ function cb(state: ProcessManagerState) {
       {
         aggregateTimeout: 300,
         poll: undefined,
+        ignored: ["**/.yarn"],
       },
       (err, stats) => {
         if (err) {
