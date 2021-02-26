@@ -9,7 +9,7 @@ import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 export default merge(baseConfig, {
   entry: {
-    renderer: "./src/renderer/index.tsx",
+    renderer: "./src/renderer",
   },
   module: {
     rules: [
@@ -33,7 +33,7 @@ export default merge(baseConfig, {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "src/renderer/index.html",
+      template: "src/renderer/renderer.html",
       minify: {
         removeComments: !isDevelopment,
         collapseWhitespace: !isDevelopment,

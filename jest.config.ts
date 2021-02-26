@@ -1,9 +1,13 @@
 import type { Config } from "@jest/types";
 
 export default {
-  collectCoverageFrom: ["src/**/*.{ts,tsx}"],
+  clearMocks: true,
+  collectCoverageFrom: ["src/**/*.{ts,tsx}", "!src/**/*.d.ts"],
+  coveragePathIgnorePatterns: ["index.ts", "e2e.ts", "test/utils"],
   moduleNameMapper: {
-    "~(.*)$": "<rootDir>/src/renderer/$1",
+    "~(.*)$": "<rootDir>/src/$1",
   },
+  modulePathIgnorePatterns: ["/releases/"],
   testPathIgnorePatterns: ["/node_modules/", "/releases/"],
+  setupFilesAfterEnv: ["<rootDir>/jest-setup.ts"],
 } as Config.InitialOptions;

@@ -9,7 +9,8 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:jest/recommended"
   ],
   "plugins": ["@emotion"],
   "settings": {
@@ -24,8 +25,12 @@
     "@emotion/import-from-emotion": "error",
     "@emotion/styled-import": "error",
     "@emotion/pkg-renaming": "error",
-    "prettier/prettier": ["error", {
-      "endOfLine": "auto"
-    }]
+    "jest/no-mocks-import": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }

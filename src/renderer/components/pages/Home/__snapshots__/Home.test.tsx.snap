@@ -6,7 +6,7 @@ exports[`Home snapshot has not changed 1`] = `
     id="home"
   >
     <h3
-      class="css-7kq9x4-Home"
+      class="css-v6lo72-Home"
     >
       Simple Counter
     </h3>
@@ -20,7 +20,7 @@ exports[`Home snapshot has not changed 1`] = `
         -
       </button>
       <span
-        class="counter__text css-uwz46b-Counter"
+        class="counter__text css-10wtsar-Counter"
       >
         1
       </span>
@@ -30,6 +30,11 @@ exports[`Home snapshot has not changed 1`] = `
         +
       </button>
     </div>
+    <button
+      class="button css-50ddk5-Button"
+    >
+      Toggle Dark Mode
+    </button>
   </div>
 </div>
 `;

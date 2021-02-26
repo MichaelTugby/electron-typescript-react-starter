@@ -2,7 +2,7 @@
 import { css, jsx } from "@emotion/react";
 import type { FunctionComponent, HTMLAttributes } from "react";
 
-import Button from "~/components/atoms/Button";
+import Button from "~/renderer/components/atoms/Button";
 
 interface ICounterType extends HTMLAttributes<HTMLDivElement> {
   onDecrease?: () => void;

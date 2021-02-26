@@ -10,8 +10,8 @@
     "build:main": "webpack --config webpack.main.config.ts",
     "build:preload": "webpack --config webpack.preload.config.ts",
     "build:renderer": "webpack --config webpack.renderer.config.ts",
-    "test": "jest src/**/*.test.tsx --coverage",
-    "e2e": "run-s build:all && jest test/*.test.ts"
+    "test": "jest src/**/*.test.{ts,tsx} --coverage",
+    "e2e": "run-s build:all && jest src/**/*.e2e.{ts,tsx}"
   },
   "dependencies": {
     "@emotion/cache": "^11.1.3",
@@ -32,7 +32,9 @@
     "@emotion/babel-plugin": "^11.1.2",
     "@emotion/eslint-plugin": "^11.0.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.4.3",
+    "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.7.1",
     "@types/electron-devtools-installer": "^2.2.0",
     "@types/jest": "^26.0.20",
     "@types/react": "^17.0.1",
@@ -52,6 +54,7 @@
     "electron-packager": "^15.2.0",
     "eslint": "^7.19.0",
     "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-jest": "^24.1.5",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-react": "^7.22.0",
     "fork-ts-checker-webpack-plugin": "^6.1.0",

@@ -5,7 +5,7 @@ import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 
 export default merge(baseConfig, {
   entry: {
-    main: "./src/preload/index.ts",
+    main: "./src/preload",
   },
   devtool: isDevelopment ? "inline-cheap-module-source-map" : false,
   module: {

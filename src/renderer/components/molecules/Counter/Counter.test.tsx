@@ -4,7 +4,7 @@ import { cleanup, render } from "@testing-library/react";
 import { ThemeProvider } from "@emotion/react";
 import Counter from "./Counter";
 
-import theme from "~/theme";
+import theme from "~/renderer/theme";
 
 describe("Counter", () => {
   afterEach(cleanup);

@@ -5,17 +5,18 @@ import { Provider as StoreProvider } from "react-redux";
 import createCache from "@emotion/cache";
 import { CacheProvider, ThemeProvider } from "@emotion/react";
 
-import store from "~/store";
-import theme from "~/theme";
+import store from "~/renderer/store";
+import theme from "~/renderer/theme";
 
-import Home from "~/components/pages/Home";
+import Home from "~/renderer/components/pages/Home";
+import { render } from "react-dom";
 
 const cache = createCache({
   key: "ite",
   nonce: "id3",
 });
 
-const App: FunctionComponent = () => (
+const Renderer: FunctionComponent = () => (
   <StoreProvider store={store}>
     <CacheProvider value={cache}>
       <ThemeProvider theme={theme}>
@@ -25,4 +26,6 @@ const App: FunctionComponent = () => (
   </StoreProvider>
 );
 
-export default App;
+render(<Renderer />, document.getElementById("root"));
+
+export default Renderer;

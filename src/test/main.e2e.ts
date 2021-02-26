@@ -1,4 +1,4 @@
-import electronPath from "electron";
+const electronPath = jest.requireActual("electron");
 import { Application } from "spectron";
 
 describe("Application Launch", () => {
@@ -7,7 +7,7 @@ describe("Application Launch", () => {
   beforeEach(async () => {
     app = new Application({
       args: ["."],
-      path: electronPath as any,
+      path: electronPath as any, // eslint-disable-line @typescript-eslint/no-explicit-any,
     });
     await app.start();
   });

@@ -1,10 +1,10 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/react";
 import { FunctionComponent } from "react";
-import { useDispatch, useSelector } from "~/store";
+import { useDispatch, useSelector } from "~/renderer/store";
 
-import Button from "~/components/atoms/Button";
-import Counter from "~/components/molecules/Counter";
+import Button from "~/renderer/components/atoms/Button";
+import Counter from "~/renderer/components/molecules/Counter";
 
 const Home: FunctionComponent = () => {
   const counter = useSelector((state) => state.counter);

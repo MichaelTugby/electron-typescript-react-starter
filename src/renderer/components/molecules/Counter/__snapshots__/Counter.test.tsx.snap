@@ -11,7 +11,7 @@ exports[`Counter snapshot has not changed 1`] = `
       -
     </button>
     <span
-      class="counter__text css-uwz46b-Counter"
+      class="counter__text css-10wtsar-Counter"
     >
       1
     </span>

@@ -1,4 +1,4 @@
-import * as counterActions from "./actions";
+import * as counterActions from "~/renderer/store/counter/actions";
 import { ActionType, createReducer } from "typesafe-actions";
 
 type CounterActions = ActionType<typeof counterActions>;
