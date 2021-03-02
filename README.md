@@ -1,4 +1,4 @@
-# Electron + Typescript + React Starter
+# Electron + Typescript + React Starter (WIP)
 
 Since I wasn't particularly happy with existing workflows, I created my own to use for future projects using a custom webpack dev server.
 
