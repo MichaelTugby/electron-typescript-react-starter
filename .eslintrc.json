@@ -1,29 +1,15 @@
 {
-  "parser": "@typescript-eslint/parser",
+  "parser": "vue-eslint-parser",
   "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    }
+    "parser": "@typescript-eslint/parser"
   },
   "extends": [
-    "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:vue/vue3-recommended",
     "plugin:prettier/recommended",
     "plugin:jest/recommended"
   ],
-  "plugins": ["@emotion"],
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  },
   "rules": {
-    "react/prop-types": 0,
-    "@emotion/jsx-import": "error",
-    "@emotion/no-vanilla": "error",
-    "@emotion/import-from-emotion": "error",
-    "@emotion/styled-import": "error",
-    "@emotion/pkg-renaming": "error",
     "jest/no-mocks-import": 0,
     "prettier/prettier": [
       "error",

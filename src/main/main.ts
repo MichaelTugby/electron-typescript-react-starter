@@ -15,12 +15,11 @@ async function createWindow() {
     const { client } = require("electron-connect"); // eslint-disable-line @typescript-eslint/no-var-requires
     const {
       default: installExtension,
-      REACT_DEVELOPER_TOOLS,
-      REDUX_DEVTOOLS,
+      VUEJS_DEVTOOLS,
     } = require("electron-devtools-installer"); // eslint-disable-line @typescript-eslint/no-var-requires
     client.create(mainWindow);
     const date = new Date().toISOString();
-    await installExtension([REACT_DEVELOPER_TOOLS, REDUX_DEVTOOLS])
+    await installExtension([VUEJS_DEVTOOLS])
       .then((name: string) =>
         console.log(
           `[${date}] [electron-devtools-installer] Added extension: ${name}`

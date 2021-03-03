@@ -21,7 +21,7 @@ export default {
     minimizer: [new TerserWebpackPlugin()],
   },
   resolve: {
-    extensions: [".js", ".ts", ".jsx", ".tsx"],
+    extensions: [".js", ".ts", ".vue", ".scss"],
     plugins: [new TsConfigPathsWebpackPlugin() as any], // eslint-disable-line @typescript-eslint/no-explicit-any
   },
   plugins: [
@@ -29,6 +29,8 @@ export default {
       "process.env.NODE_ENV": JSON.stringify(
         process.env.NODE_ENV || "development"
       ),
+      __VUE_OPTIONS_API__: false,
+      __VUE_PROD_DEVTOOLS__: false,
     }),
     new ProgressPlugin(),
   ],
