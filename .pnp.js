@@ -83,6 +83,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-refresh", "npm:0.9.0"],
             ["redux", "npm:4.0.5"],
             ["redux-devtools-extension", "virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:2.13.8"],
+            ["redux-persist", "virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:6.0.0"],
             ["redux-thunk", "npm:2.3.0"],
             ["terser-webpack-plugin", "virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:5.1.1"],
             ["ts-node", "virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:9.1.1"],
@@ -6599,6 +6600,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react-refresh", "npm:0.9.0"],
             ["redux", "npm:4.0.5"],
             ["redux-devtools-extension", "virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:2.13.8"],
+            ["redux-persist", "virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:6.0.0"],
             ["redux-thunk", "npm:2.3.0"],
             ["terser-webpack-plugin", "virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:5.1.1"],
             ["ts-node", "virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:9.1.1"],
@@ -12119,6 +12121,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/redux-devtools-extension-virtual-c41f7b0b14/0/cache/redux-devtools-extension-npm-2.13.8-17d5a8921e-4375a06982.zip/node_modules/redux-devtools-extension/",
           "packageDependencies": [
             ["redux-devtools-extension", "virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:2.13.8"],
+            ["@types/redux", null],
+            ["redux", "npm:4.0.5"]
+          ],
+          "packagePeers": [
+            "@types/redux",
+            "redux"
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["redux-persist", [
+        ["npm:6.0.0", {
+          "packageLocation": "./.yarn/cache/redux-persist-npm-6.0.0-56dad69feb-6b7c745261.zip/node_modules/redux-persist/",
+          "packageDependencies": [
+            ["redux-persist", "npm:6.0.0"]
+          ],
+          "linkType": "SOFT",
+        }],
+        ["virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:6.0.0", {
+          "packageLocation": "./.yarn/$$virtual/redux-persist-virtual-3c7aedaa53/0/cache/redux-persist-npm-6.0.0-56dad69feb-6b7c745261.zip/node_modules/redux-persist/",
+          "packageDependencies": [
+            ["redux-persist", "virtual:c6abeb61dfdfc6e01488e3187746aa968b21b1dfcb9ad7ed510013bf8cfbff1f5b65207767f70cd1b275e8a97bf5368692d4a0e88cda159f5b4bb2b220ce18e6#npm:6.0.0"],
             ["@types/redux", null],
             ["redux", "npm:4.0.5"]
           ],
